@@ -1,0 +1,39 @@
+<!-- <div>
+  <div class="card my-3 bg-light text-dark shadow">
+    <div class='card-header'>
+      <h3>{{news.title}}</h3>
+    </div>
+    <div class="row no-gutters align-items-center">
+      <div class="col-12 col-md-5 col-xl-4 text-center">
+        <img class="card-img p-sm-3" src="{{news.urlToImage}}" alt="image">
+      </div>
+      <div class="col-12 col-md-7 col-xl-8">
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{news.description}}</p>
+            <footer class="blockquote-footer">{{news.author}} - <cite>{{news.source.name}}</cite></footer>
+          </blockquote>
+          <a class="btn btn-outline-success btn-lg btn-block" href="{{news.url}}">Read more</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted text-center">
+      <h5>{{news.publishedAt}}</h5>
+    </div>
+  </div>
+</div> -->
+
+<a class="card bg-secondary text-light" href="{{path}}">
+  <div class="card-header text-center">
+      <h5>{{news.title}}</h5>
+  </div>
+  
+  <img class="card-img" src="{{news.urlToImage}}" alt="News image">
+  <div class="card-img-overlay">
+    <!-- <a class="btn btn-outline-success btn-lg btn-block" href="{{news.url}}">Read more</a> -->
+  </div>
+
+  <div class="card-footer text-light text-center">
+    <h5>{{news.publishedAt}}</h5>
+  </div>
+</a>

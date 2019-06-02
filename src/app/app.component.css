@@ -4,18 +4,16 @@
 }
 
 .navigation {
-    min-height: 10vh;
+    min-height: 5vh;
     padding: 2vh 0;
     display: block;
 }
 
 .content {
-    min-height: 80vh;
     display: block;
 }
 
 .footer {
-    min-height: 10vh;
-    padding: 2vh 0;
+    min-height: 5vh;
     display: block;
 }

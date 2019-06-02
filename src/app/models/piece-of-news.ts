@@ -1,4 +1,5 @@
 import { Source } from './source';
+import UUID from 'uuid/v4';
 
 export class PieceOfNews {
     source: Source;
@@ -7,8 +8,9 @@ export class PieceOfNews {
     description = '';
     url = '';
     urlToImage = '';
-    publishedAt: Date;
+    publishedAt = '';
     content = '';
+    id: string = UUID();
 
     constructor(data: any){
         this.source = data.source ? new Source( data.source ) : new Source();
@@ -18,6 +20,6 @@ export class PieceOfNews {
         this.url = data.url ? data.url : this.url;
         this.urlToImage = data.urlToImage ? data.urlToImage : this.urlToImage;
         this.content = data.content ? data.content : this.content;
-        this.publishedAt = data.publishedAt ? new Date(Date.parse(data.publishedAt)) : new Date( Date.now() );
+        this.publishedAt = data.publishedAt ? new Date(Date.parse(data.publishedAt)).toDateString() : new Date( Date.now() ).toDateString();
     }
 }

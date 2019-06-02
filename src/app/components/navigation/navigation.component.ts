@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment as env } from '../../../environments/environment';
 
 @Component({
   selector: 'app-navigation',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  title = env.siteTitle;
+  paths = env.paths;
 
   constructor() { }
 
