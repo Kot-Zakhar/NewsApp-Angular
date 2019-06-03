@@ -10,6 +10,6 @@ export class NewsResponse implements Response {
     constructor(data?: any) {
         this.status = data.status || '';
         this.totalResults = data.totalResults || 0;
-        this.articles = data.articles ? data.articles.map(article =>  new PieceOfNews(article)) : {};
+        this.articles = data.articles ? data.articles.map(article =>  new PieceOfNews(article)) : [];
     }
 }

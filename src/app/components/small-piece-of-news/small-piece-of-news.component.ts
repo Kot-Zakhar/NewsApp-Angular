@@ -17,7 +17,7 @@ export class SmallPieceOfNewsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.log = debug('smallPieceOfNews ' + this.news.id);
+    this.log = debug('app-smallPieceOfNews ' + this.news.id);
     this.log("Piece created");
     this.path = Env.paths.news + '/' + this.news.id;
   }

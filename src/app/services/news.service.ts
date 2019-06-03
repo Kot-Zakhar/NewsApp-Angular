@@ -7,7 +7,7 @@ import { Params } from '../services/api.service';
 import { PieceOfNews } from '../models/piece-of-news';
 
 import debug from 'debug';
-import { ApiService } from './api.service';
+import { ApiService, SourcesParams, TopHeadlinesParams } from './api.service';
 const log = debug('app-newsService');
 
 @Injectable({
@@ -27,13 +27,13 @@ export class NewsService {
 
   }
 
-  GetTopHeadlines(callback: (data: PieceOfNews[], error: Error) => void, params?: any){
-    log('top headlines: ', params);
-
+  GetTopHeadlines(callback: (data: PieceOfNews[], error: Error) => void, params?: TopHeadlinesParams){
+    
     if (!params){
       params = Env.api.defaultParams;
     }
-
+    log('getting top headlines with params: ', params);
+    
     this.api.GetRequest(Env.api.topHeadlines, params).subscribe(
       value => {
         const res = new NewsResponse(value);
@@ -61,11 +61,11 @@ export class NewsService {
     log('load more: ', this.lastParams);
 
     if (Env.maxNewsAllowed <= this.pagesLoaded * this.pageSize) {
-      callback(null, new Error(Env.alerts.noNewsAvailable));
+      callback(undefined, new Error(Env.alerts.noNewsAvailable));
       return;
     }
     if (this.newsAvailable <= this.pagesLoaded * this.pageSize) {
-      callback(null, new Error(Env.alerts.noMewsLeft));
+      callback(undefined, new Error(Env.alerts.noMewsLeft));
       return;
     }
 
@@ -79,11 +79,12 @@ export class NewsService {
       value => {
         const res = new NewsResponse(value);
         this.currentNews = this.currentNews.concat(res.articles);
-        if (res.status === Env.api.okStatus){
+        if (res.status === Env.api.okStatus) {
+          log('loaded ' + res.articles.length + ' news');
           this.pagesLoaded = this.lastParams.page;
-          callback(res.articles, null);
+          callback(res.articles, undefined);
         } else {
-          callback(null, new Error(res.error.message));
+          callback(undefined, new Error(res.error.message));
         }
       }
     )

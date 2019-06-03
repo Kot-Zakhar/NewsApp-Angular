@@ -5,7 +5,7 @@ import { environment as Env } from 'src/environments/environment';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { Response } from '../models/response';
 
-const log = debug('apiService');
+const log = debug('app-apiService');
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +15,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   GetRequest(apiInfo: ApiInfo, params?: TopHeadlinesParams | SourcesParams) {
-    log('request: ', params);
     if (!params) {
       params = Env.api.defaultParams;
     }
+    log('request: ', params);
     let queryUrl = Env.api.name + apiInfo.name;
-    log("request with params:", params);
     let queryParams = new HttpParams();
     apiInfo.params.forEach(paramName => {
       const paramValue = params[paramName] || Env.api.defaultQuery[paramName] || '';

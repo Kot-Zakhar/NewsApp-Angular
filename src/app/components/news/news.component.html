@@ -1,9 +1,10 @@
 <app-sources class="sources"></app-sources>
-<div *ngIf="error">No articles available</div>
-  <div *ngIf="!error" class="card-columns">
-    <div *ngFor="let pieceOfNews of news">
+<div class="card-columns">
+  <div *ngFor="let pieceOfNews of news">
     <app-small-piece-of-news [news]='pieceOfNews'></app-small-piece-of-news>
   </div>
 </div>
+
+<div *ngIf="errorEnabled" class="alert alert-danger">{{error.message}}</div>
 
 <button type="button" class="btn btn-outline-primary btn-dark btn-lg btn-block" (click)='LoadMore()'>Load more</button>
