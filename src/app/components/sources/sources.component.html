@@ -1,4 +1,4 @@
-<div class="row px-0 border-right border-left border-secondary">
+<div *ngIf="sources && sources.length" class="row px-0 border-right border-left border-secondary">
   <div *ngFor="let source of sources" class="col-auto">
       <div class="btn btn-outline-secondary shadow" id="{{source.id}}" (click)="SourceClicked(source);" [class.btn-light]="selectedSourcesIds.includes(source.id)">
         <p class="my-0">{{source.name}}</p>
