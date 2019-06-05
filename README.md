@@ -1,5 +1,7 @@
 # NewsApp
 
+To see it live go to [This gh-page](https://kot-zakhar.github.io/NewsApp-Angular)<hr>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
