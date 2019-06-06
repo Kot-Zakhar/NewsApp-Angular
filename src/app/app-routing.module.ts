@@ -8,8 +8,8 @@ import { BigPieceOfNewsComponent } from './components/big-piece-of-news/big-piec
 
 
 const routes: Routes = [
-  // { path: '', redirectTo: env.paths.home, pathMatch: 'full' },
   { path: env.paths.home, component: NewsComponent },
+  { path: '', redirectTo: env.paths.home, pathMatch: 'full' },
   { path: env.paths.pieceOfNews, component: BigPieceOfNewsComponent },
   { path: '**', component: NotFoundComponent }
 ];
