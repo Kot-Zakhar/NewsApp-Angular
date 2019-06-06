@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   paths: {
-    home: 'home',
+    home: '',
     news: 'news',
     pieceOfNews: 'news/:id'
   },
