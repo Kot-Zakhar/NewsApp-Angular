@@ -1,6 +1,6 @@
 <app-sources class="sources"></app-sources>
-<div class="card-columns">
-  <div *ngFor="let pieceOfNews of news">
+<div class="row">
+  <div *ngFor="let pieceOfNews of news" class="col-12 col-md-6 col-lg-4 px-4 pb-4">
     <app-small-piece-of-news [news]='pieceOfNews'></app-small-piece-of-news>
   </div>
 </div>

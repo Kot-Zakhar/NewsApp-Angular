@@ -2,13 +2,10 @@
   "name": "news-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "node server.js",
+    "heroku-start": "node server.js",
+    "start": "ng serve",
     "build": "ng build --prod",
-    "publish": "gh-pages -d dist/NewsApp",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
+    "publish": "npm run build && gh-pages -d dist/NewsApp",
     "heroku-postbuild": "ng build --prod"
   },
   "private": true,
