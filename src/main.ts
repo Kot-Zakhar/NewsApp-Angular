@@ -9,7 +9,7 @@ import debug from 'debug';
 if (environment.production) {
   enableProdMode();
 } else {
-  debug.enable("app-*");
+  debug.enable('app-*');
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)

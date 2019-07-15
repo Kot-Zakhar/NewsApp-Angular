@@ -20,6 +20,6 @@ export class PieceOfNews {
         this.url = data.url ? data.url : this.url;
         this.urlToImage = data.urlToImage ? data.urlToImage : this.urlToImage;
         this.content = data.content ? data.content : this.content;
-        this.publishedAt = data.publishedAt ? new Date(Date.parse(data.publishedAt)).toDateString() : new Date( Date.now() ).toDateString();
+        this.publishedAt = new Date(data.publishedAt ? Date.parse(data.publishedAt) :  Date.now()).toLocaleString();
     }
 }
