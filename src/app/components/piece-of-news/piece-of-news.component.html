@@ -1,0 +1,45 @@
+<div type="button" data-toggle="modal" [attr.data-target]="'#' + news.id" class="card bg-secondary text-light">
+  <div class="card-header text-center">
+    <h5>{{news.title}}</h5>
+  </div>
+  
+  <img class="card-img" src="{{news.urlToImage}}" alt="News image">
+
+  <!-- <div class="card-footer text-light text-center">
+    <h5>{{news.publishedAt}}</h5>
+  </div> -->
+</div>
+
+<div class="modal fade" id="{{news.id}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>{{news.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 col-lg-5">
+            <img src="{{news.urlToImage}}" class="w-100" alt="News image">
+          </div>
+          <div class="col-12 col-lg-7">
+            <blockquote class="blockquote mb-0">
+              <!-- description -->
+              <p>{{news.description}}</p>
+              <!-- author + sourceName-->
+              <footer class="blockquote-footer">{{news.author + (news.author?' - ':'')}}<cite>{{news.source.name}}</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+        <!-- url -->
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-success" href="{{news.url}}" target="_blanks">Read more</a>
+        <a class="btn btn-outline-secondary" data-dismiss="modal">Close</a>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>

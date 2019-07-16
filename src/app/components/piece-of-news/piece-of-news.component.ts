@@ -6,13 +6,20 @@ import debug from 'debug';
 import { NewsComponent } from '../news/news.component';
 
 @Component({
-  selector: 'app-small-piece-of-news',
-  templateUrl: './small-piece-of-news.component.html',
-  styleUrls: ['./small-piece-of-news.component.css']
+  selector: 'app-piece-of-news',
+  templateUrl: './piece-of-news.component.html',
+  styleUrls: ['./piece-of-news.component.css']
 })
-export class SmallPieceOfNewsComponent implements OnInit {
+/* TODO:
+  fix a bug with random not opening windows
+*/
+export class PieceOfNewsComponent implements OnInit {
   log;
   path;
+
+  animal: string;
+  name: string;
+
   @Input() news: PieceOfNews;
   constructor() { }
 
