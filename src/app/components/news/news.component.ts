@@ -15,6 +15,11 @@ const log = debug('app-newsComponent');
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.css']
 })
+
+/* TODO:
+  there are two identical requests at the start of the site.
+  probably: because of observable (newsService)
+ */
 export class NewsComponent implements OnInit {
   news: PieceOfNews[];
   error: Error;
